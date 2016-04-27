@@ -1,22 +1,44 @@
 <!DOCTYPE html>
-<html lang="">
-	<head>
-	 	<!-- Required meta tags always come first -->
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Title Page</title>
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<h1 class="text-xs-center">Hello World</h1>
+<html lang="" ng-app="myApp">
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>San Diego Top Spots</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+</head>
+<body ng-controller="myAppController">
 
-		<!-- jQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-		<script src="index.js"></script>
-	</body>
+	<h1 class="center">San Diego Top Spots</h1>
+	<div class="flex-container" id="hold-map">
+		<div id="map"></div>
+	</div>
+	
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th >Name</th>
+				<th >Description</th>
+				<th >Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="site in topSites">
+				<td>{{site.name}}</td>
+				<td>{{site.description}}</td>
+				<td><a class="btn btn-info mrs" href={{site.link}}>Open in Google Maps</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- Bootstrap JavaScript -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">		
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<script src="index.js"></script>
+</body>
 </html>
